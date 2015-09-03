@@ -35,7 +35,6 @@ a {
   width: 20%;
   height: 100%;
   float: left;
-
 }
   .left-column li{
     margin: 1em 0;
@@ -46,6 +45,10 @@ a {
   .grey {
     color: #777;
   }
+.right-column {
+    height: 100%;
+    float: right;
+  }
 .remark-code, .remark-inline-code {
   font-family: 'Ubuntu Mono';
 }
@@ -55,6 +58,6 @@ a {
 .remark-code-line-highlighted {
   background-color: #ff7;
 }
-.spacer {
-   margin-top: 1em;
+.red {
+  color: #f92672;
 }
