@@ -6,29 +6,51 @@ class: center, middle, title
 ---
 layout: true
 .left-column[
-1. [Excuses](#excuses)
-1. [Difficulties](#difficulties)
+1. [Disclaimer](#disclaimer)
 1. [Readability](#readability)
-1. [Risk-based testing](#risk)
+1. [Benefits](#benefits)
+1. [Example](#example)
 1. [Bring code under test](#undertest)
 1. [Integration tests](#integration)
 1. [Maintenance](#maint)
 ]
-
 ---
-name: excuses
-# Frequent excuses to not write tests
-<br>
-### I don't have time to write tests. I could be coding new features instead
-## But, how much time do you spend chasing bugs?
-### Manual testing is good enough
-## But, do you really test everything everytime?
 
+name: disclaimer
+# !!! Disclaimer !!!
+## I will not try to convince anybody to write tests.
+## We need internally valued reasons to do something.
+## However, in the long run, I believe that
+# tests minimise maintenance effort!
+## So, in my view, in tests, one of the most important things is...
 ---
-template: excuses
-# Tests **minimise maintenance** in the long run
 
+name: readability
+# Readability
+## Test goal's should be obvious from the first look
+## Why? Two years after writing the program,
+# I don't want to have to sort through layers of irrelevant stuff in order to discover what bug my test just caught.
+## And all of it, because I'm <b><u>LAZY</u></b> now!
 ---
+
+name: benefits
+# Think about your future self
+## Tests serve against regressions
+## Tests serve as executable documentation
+.spacer[]
+# And think about yourself, now
+## Tests give insights about code design
+## Tests help us learn new things
+.spacer[]
+# But, it's not easy to write good tests...
+---
+name: example
+.center[
+<br><br><br><br><br><br><br><br>
+# OK, now show me some code!
+]
+---
+
 name: difficulties
 # It's not easy to write good tests
 #### How many tests should you write for this method?
