@@ -1,5 +1,5 @@
 class: center, middle, title
-# Tests & Copilote
+# Tests@Copilote
 
 [jop@infologic.fr](mailto:jop@infologic.fr)<br>2015
 ---
@@ -10,10 +10,9 @@ layout: true
 1. [Readability](#readability)
 1. [Example](#example)
 1. [Unit testing](#pattern)
-1. [Benefits & Costs](#benefits)
+1. [Benefits & Costs](#costs)
 1. [Practical stuff](#tools)
 1. [Bring code under test](#undertest)
-1. [Maintenance](#maint)
 ]
 ---
 
@@ -23,7 +22,7 @@ name: disclaimer
 ## We need internally valued reasons to do something
 ## However, in the long run, I believe that
 # tests minimise maintenance effort!
-## So, in my view, in tests, one of the most important things is...
+## In my view, in tests, one of the most important things is...
 ---
 
 name: readability
@@ -63,6 +62,8 @@ name: granularity
 ## My code and your code?
 ## Whole system?
 ---
+
+exclude: true
 name: granularity2
 # What does `unit` means in unit testing?
 ## A method? A class? A cluster of classes?
@@ -71,6 +72,7 @@ name: granularity2
 ## My code and your code?
 ## Whole system?
 ---
+
 name: risk
 # What to test? Risk based testing
 ## What is the feature that, if it doesn't work, we .red[loose money or clients]?
@@ -78,6 +80,7 @@ name: risk
 ## What are the most .red[complex parts] of the software?
 ## What are the types of .red[mistakes] we are usually making when developing?
 ---
+
 name: costs
 # Costs
 ## For yourself, now
@@ -101,8 +104,8 @@ name: benefits
 ### Tests protect against regression
 ### Tests provide executable documentation
 ### Tests facilitate refactoring
-
 ---
+
 name: tools
 # Create database
 ```
@@ -128,16 +131,17 @@ generator.tearDown();
 ```
 ###.right[see DEVFAQ-230]
 ---
+
 name: problems
 # Problems
-## database setup is hard and ugly
+## Database setup is hard and ugly
 ## `static`
 * #### `static` state needs explicit teardown
 * #### `static` creates globally accessible variables/methods .red[&#8658; hidden dependencies]
-## platform dependency (Linux vs Windows)
+## Platform dependency (Linux vs Windows)
 * #### file system
 * #### line break
-## very well hidden dependencies (ventes vs superviseur)
+## Very well hidden dependencies (ventes vs superviseur)
 * #### modules fonctionels
 ---
 
@@ -157,29 +161,30 @@ name: problems
 * #### time
 # Explicit dependencies are better than hidden ones
 ---
+
 name: blackbox
 # Black box testing
 #### How many tests should you write for this method?
 ```
 public int compute(int number)
 ```
----
-template: blackbox
+--
+
 ```
 {
   return number;
 }
 ```
-
 ---
+
 name: blackbox2
 template: blackbox
 #### For this one?
 ```
 public int compute(int number, boolean flag)
 ```
----
-template: blackbox2
+--
+
 #### What about this one?
 ```
 public List manageContQuals(int nomChaine, Produit produit, TypLot typLot,
@@ -201,18 +206,19 @@ public List manageContQuals(int nomChaine, Produit produit, TypLot typLot,
 ###.right[see [eclEmma](http://www.eclemma.org)]
 ---
 
+name: undertest
 # Bring code under test
 ## Reproduce bugs as unit tests
-## Red: Test will first fail
+## Red: Test should fail
 .right-column[![TDD loop](tddloop.jpg)]
 ## Fix the problem
 ## Green: Test should succeed
 ## Refactor: Improve the code
 # Freebie: protection against regression
-
 ---
+
 layout: true
 class: center, middle, title
-
 ---
-# Questions ?
+
+# Questions?
